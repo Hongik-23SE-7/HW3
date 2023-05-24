@@ -1,9 +1,10 @@
 #include "SignUp.hpp"
+#include "../entity/CompanyMember.hpp"
 
 using namespace std;
 
-void SignUp::signUp(std::string id, std::string password, std::string name) {
+void SignUp::signUp(string id, string password, string companyName, string businessNumber) {
     repository = MemberRepository::getMemberRepository();
-    Member member = {id, password, name};
+    CompanyMember member = {id, password, companyName, businessNumber};
     repository->addNewMember(member);
 }

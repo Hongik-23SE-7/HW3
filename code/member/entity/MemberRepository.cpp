@@ -9,16 +9,24 @@ MemberRepository* MemberRepository::getMemberRepository() {
     return memberRepository;
 }
 
-Member MemberRepository::getMemberById(string id) {
-    for(Member member : memberList) {
+bool MemberRepository::existMemberById(string id) {
+    for(CompanyMember member : memberList) {
+        if(member.getId() == id)
+            return true;
+    }
+    return false;
+}
+
+CompanyMember MemberRepository::getMemberById(string id) {
+    for(CompanyMember member : memberList) {
         if(member.getId() == id)
             return member;
     }
-    return Member(); // null 반환 하고
+    return CompanyMember();
 }
 
-void MemberRepository::addNewMember(Member member) {
-    memberList.push_back(member);
+void MemberRepository::addNewMember(CompanyMember companyMember) {
+    memberList.push_back(companyMember);
 }
 
 void MemberRepository::deleteMember(string id) {

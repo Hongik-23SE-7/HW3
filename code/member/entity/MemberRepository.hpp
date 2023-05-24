@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "Member.hpp"
+#include "CompanyMember.hpp"
 using namespace std;
 
 class Member;
@@ -11,12 +11,13 @@ class Member;
 class MemberRepository {
 private:
     static MemberRepository *memberRepository;
-    vector<Member> memberList;
+    vector<CompanyMember> memberList;
 
 public:
     static MemberRepository *getMemberRepository();
-    Member getMemberById(string id);
-    void addNewMember(Member member);
+    CompanyMember getMemberById(string id);
+    bool existMemberById(string id);
+    void addNewMember(CompanyMember member);
     void deleteMember(string id);
 };
 

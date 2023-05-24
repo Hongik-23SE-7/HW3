@@ -4,7 +4,7 @@ string Member::getId() {
     return this->id;
 }
 
-bool Member::matchPassword(std::string password) {
+bool Member::matchPassword(string password) {
     if (this->password.compare(password) == 0) {
         return true;
     } else {
