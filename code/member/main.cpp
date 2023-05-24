@@ -3,6 +3,7 @@
 #include <fstream>
 #include "boundary/SignUpUI.hpp"
 #include "boundary/LoginUI.hpp"
+#include "boundary/LogOutUI.hpp"
 
 // 상수 선언
 #define INPUT_FILE_NAME "input.txt"
@@ -61,7 +62,6 @@ void doTask() {
                                 break;
                             }
                         }
-                        output << "1.1. 회원가입\n> 회원가입 완료\n";
                     }
                 }
                 break;
@@ -72,11 +72,12 @@ void doTask() {
                         cout << "hi 2.1" << endl;
                         LoginUI *boundary = new LoginUI();
                         boundary->login(input, output);
-                        output << "2.1. 로그인\n> 로그인 완료\n";
                         break;
                     }
                     case 2: {
                         cout << "hi 2.2" << endl;
+                        LogOutUI *boundary = new LogOutUI();
+                        boundary->logOut(input, output);
                         break;
                     }
                 }

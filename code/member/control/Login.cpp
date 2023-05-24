@@ -1,5 +1,6 @@
 #include "Login.hpp"
 #include "../entity/MemberRepository.hpp"
+#include "../entity/Authenticator.hpp"
 
 bool Login::login(string id, string password) {
     MemberRepository *repository = MemberRepository::getMemberRepository();
@@ -7,6 +8,8 @@ bool Login::login(string id, string password) {
     if (repository->existMemberById(id)) {
         Member member = repository->getMemberById(id);
         if (member.matchPassword(password)) {
+            Authenticator *authenticator = Authenticator::getAuthenticator();
+            authenticator->addSession(member.getId());
             return true;
         }
     }

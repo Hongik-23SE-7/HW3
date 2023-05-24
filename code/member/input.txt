@@ -2,4 +2,5 @@
 2 1 hn pwd2
 1 1 1 hankook 3456 hk pwd1
 2 1 hk pwd1
+2 2
 6 1

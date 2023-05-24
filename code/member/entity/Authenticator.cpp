@@ -1,5 +1,4 @@
 #include "Authenticator.hpp"
-#include "Session.hpp"
 
 Authenticator* Authenticator::authenticator = nullptr;
 
@@ -11,6 +10,11 @@ Authenticator* Authenticator::getAuthenticator() {
 }
 
 void Authenticator::addSession(string loginId) {
-    Session session = {loginId};
-    sessionList.push_back(session);
+    this->session = loginId;
+}
+
+string Authenticator::clearSession() {
+    string retId = this->session;
+    this->session.clear();
+    return retId;
 }
