@@ -49,16 +49,13 @@ void doTask() {
                 switch (menu_level_2) {
                     case 1: {
                         input >> menu_level_3;
-                        cout << menu_level_3 << endl;
                         SignUpUI *boundary = new SignUpUI();
                         switch (menu_level_3) {
                             case 1: {
-                                cout << "hi 1.1.1" << endl;
                                 boundary->companyMemberSignUp(input, output);
                                 break;
                             }
                             case 2: {
-                                cout << "hi 1.1.2" << endl;
                                 boundary->generalMemberSignUp(input, output);
                                 break;
                             }
@@ -66,7 +63,6 @@ void doTask() {
                         break;
                     }
                     case 2: {
-                        cout << "hi 1.2" << endl;
                         WithdrawUI *withdrawUI = new WithdrawUI();
                         withdrawUI->withdraw(output);
                         break;
@@ -77,13 +73,11 @@ void doTask() {
             case 2: {
                 switch (menu_level_2) {
                     case 1: {
-                        cout << "hi 2.1" << endl;
                         LoginUI *boundary = new LoginUI();
                         boundary->login(input, output);
                         break;
                     }
                     case 2: {
-                        cout << "hi 2.2" << endl;
                         LogOutUI *boundary = new LogOutUI();
                         boundary->logOut(output);
                         break;
@@ -106,6 +100,5 @@ void doTask() {
 }
 
 void program_exit() {
-    cout << "종료" << endl;
     output << "6.1. 종료";
 }
