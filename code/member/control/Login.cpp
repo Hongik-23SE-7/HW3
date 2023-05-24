@@ -1,9 +1,8 @@
 #include "Login.hpp"
-#include "../entity/MemberRepository.hpp"
 #include "../entity/Authenticator.hpp"
 
 bool Login::login(string id, string password) {
-    MemberRepository *repository = MemberRepository::getMemberRepository();
+    repository = MemberRepository::getMemberRepository();
 
     if (repository->existMemberById(id)) {
         Member member = repository->getMemberById(id);
