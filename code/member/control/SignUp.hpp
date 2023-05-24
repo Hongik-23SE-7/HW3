@@ -11,7 +11,8 @@ private:
     MemberRepository *repository;
 
 public:
-    void signUp(string id, string password, string companyName, string businessNumber);
+    void companyMemberSignUp(string id, string password, string companyName, string businessNumber);
+    void generalMemberSignUp(string id, string password, string name, string residentRegistrationNumber);
 };
 
 #endif

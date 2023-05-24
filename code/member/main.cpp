@@ -39,7 +39,6 @@ void doTask() {
     
     while(!is_program_exit) { // 입력파일에서 메뉴 숫자 2개를 읽기
         input >> menu_level_1 >> menu_level_2;
-//        cout << menu_level_1 << menu_level_2 << endl;
 
 
         // 메뉴 구분 및 해당 연산 수행
@@ -48,15 +47,17 @@ void doTask() {
                 switch (menu_level_2) {
                     case 1: {
                         input >> menu_level_3;
+                        cout << menu_level_3 << endl;
+                        SignUpUI *boundary = new SignUpUI();
                         switch (menu_level_3) {
                             case 1: {
                                 cout << "hi 1.1.1" << endl;
-                                SignUpUI *boundary = new SignUpUI();
-                                boundary->signUp(input, output);
+                                boundary->companyMemberSignUp(input, output);
                                 break;
                             }
                             case 2: {
                                 cout << "hi 1.1.2" << endl;
+                                boundary->generalMemberSignUp(input, output);
                                 break;
                             }
                         }
@@ -74,7 +75,12 @@ void doTask() {
                         output << "2.1. 로그인\n> 로그인 완료\n";
                         break;
                     }
+                    case 2: {
+                        cout << "hi 2.2" << endl;
+                        break;
+                    }
                 }
+                break;
             }
             case 6: {
                 switch(menu_level_2) {
@@ -91,5 +97,6 @@ void doTask() {
 }
 
 void program_exit() {
+    cout << "종료" << endl;
     output << "6.1. 종료";
 }

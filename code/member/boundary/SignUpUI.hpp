@@ -10,7 +10,8 @@ private:
     SignUp *control;
 
 public:
-    void signUp(ifstream& input, ofstream& output);
+    void companyMemberSignUp(ifstream& input, ofstream& output);
+    void generalMemberSignUp(ifstream& input, ofstream& output);
 };
 
 #endif

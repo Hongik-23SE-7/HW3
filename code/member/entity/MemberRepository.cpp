@@ -10,23 +10,23 @@ MemberRepository* MemberRepository::getMemberRepository() {
 }
 
 bool MemberRepository::existMemberById(string id) {
-    for(CompanyMember member : memberList) {
+    for(Member member : memberList) {
         if(member.getId() == id)
             return true;
     }
     return false;
 }
 
-CompanyMember MemberRepository::getMemberById(string id) {
-    for(CompanyMember member : memberList) {
+Member MemberRepository::getMemberById(string id) {
+    for(Member member : memberList) {
         if(member.getId() == id)
             return member;
     }
     return CompanyMember();
 }
 
-void MemberRepository::addNewMember(CompanyMember companyMember) {
-    memberList.push_back(companyMember);
+void MemberRepository::addNewMember(Member member) {
+    memberList.push_back(member);
 }
 
 void MemberRepository::deleteMember(string id) {
