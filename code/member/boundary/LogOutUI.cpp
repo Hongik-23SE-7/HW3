@@ -1,7 +1,7 @@
 #include "LogOutUI.hpp"
 #include "../entity/Authenticator.hpp"
 
-void LogOutUI::logOut(std::ifstream &input, std::ofstream &output) {
+void LogOutUI::logOut(std::ofstream &output) {
     control = new LogOut();
     string logOutId = control->logOut();
     cout << logOutId << endl;

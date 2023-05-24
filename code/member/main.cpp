@@ -4,6 +4,7 @@
 #include "boundary/SignUpUI.hpp"
 #include "boundary/LoginUI.hpp"
 #include "boundary/LogOutUI.hpp"
+#include "boundary/WithdrawUI.hpp"
 
 // 상수 선언
 #define INPUT_FILE_NAME "input.txt"
@@ -62,6 +63,13 @@ void doTask() {
                                 break;
                             }
                         }
+                        break;
+                    }
+                    case 2: {
+                        cout << "hi 1.2" << endl;
+                        WithdrawUI *withdrawUI = new WithdrawUI();
+                        withdrawUI->withdraw(output);
+                        break;
                     }
                 }
                 break;
@@ -77,7 +85,7 @@ void doTask() {
                     case 2: {
                         cout << "hi 2.2" << endl;
                         LogOutUI *boundary = new LogOutUI();
-                        boundary->logOut(input, output);
+                        boundary->logOut(output);
                         break;
                     }
                 }

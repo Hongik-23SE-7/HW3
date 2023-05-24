@@ -11,7 +11,7 @@ class LogOutUI {
 private:
     LogOut *control;
 public:
-    void logOut(ifstream& input, ofstream& output);
+    void logOut(ofstream& output);
 };
 
 #endif
